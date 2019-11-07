@@ -1,0 +1,237 @@
+<?php 
+	// include("../login/login_check.php");
+	include("../../config.php");
+	include("../../conexi.php");
+	
+	$link=Conectarse();
+	
+	$consulta = "SELECT * FROM productos";
+	
+	$result = mysqli_query ($link, $consulta);
+	
+	if  ($result){
+		while ($fila =mysqli_fetch_assoc($result)){
+			$productos[] = $fila;
+			
+		}
+		
+	}
+	
+	else {
+		die("Error en consulta".mysqli_error($link));
+		
+	}
+	
+?> 
+
+<!DOCTYPE html>
+<html lang="es_mx"> 
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<title>Nueva Nota</title> 
+		<script src="../../vendor/jquery/alertify.min.js"></script>
+		
+	
+		
+		<style>
+			table input{
+			
+			width: 100%;
+			}
+		</style>
+	</head>
+	
+	<body id="page-top" class="">
+		<div class="d-print-none">
+			
+			
+			<form id="form_ventas">
+				<div class="row">
+					<div class="col-4">
+						<div class="form-group row align-items-center">
+							<label class="col-auto font-weight-bold" for="folio">Folio:</label>
+							<input class="col-8" type="number" class="form-control" id="id_ventas" name="id_ventas">
+						</div>
+					</div>
+					<div class="col-8">
+						<div class="row form-group row align-items-center">
+							<label class="col-auto font-weight-bold" for="nombre">Nombre:</label>
+							<input class="col-6" type="text" class="form-control" id="nombre_cliente" name="nombre_cliente" value="Mostrador">
+						</div>
+					</div>
+				</div>
+			</form>
+			
+			<div id="wrapper">
+				<div id="content-wrapper">
+					<div class="container-fluid">
+						<table id="tabla_ventas" style="width: 100%" class="table-bordered" style="">
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>Cantidad</th>
+									<th>Clave</th>
+									<th>Descripción</th>
+									<th>Precio</th>
+									<th>Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<form id="form_venta_productos">
+									
+									<tr>
+										<td class="text-center">1</td>
+										<td ><input name="cantidad[]" class="cantidad text-right" ></td>
+										<td ><input class="articulo "></td>
+										<td style="width: 30%;" class=""><input class="descripcion " name="descripcion_productos[]" readonly></td>
+										<td><input class="precio" name="precio[]" readonly></td>
+										<td><input class="importe" name="importe[]" readonly></td> 
+									</tr>
+									<tr>
+										<td class="text-center">2</td>
+										<td ><input name="cantidad[]" class="cantidad text-right" ></td>
+										<td ><input class="articulo "></td>
+										<td style="width: 30%;" class=""><input class="descripcion " name="descripcion_productos[]" readonly></td>
+										<td><input class="precio" name="precio[]" readonly></td>
+										<td><input class="importe" name="importe[]" readonly></td> 
+									</tr>
+									
+								</form>
+							</tbody>
+							<tfoot>
+								<tr class="h4">
+									<td class="text-right" colspan="5">Total: </td>
+									<td>
+										<input class="text-right form-control" readonly id="total" name="total" value="0" min="1" form="form_ventas">
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+						
+						
+					</div>
+					<!-- /.container-fluid -->
+					
+				</div>
+				<!-- /.content-wrapper -->
+				
+			</div>
+			<!-- /#wrapper -->
+			
+			<!-- Scroll to Top Button-->
+			<a class="scroll-to-top rounded" href="#page-top">
+				<i class="fas fa-angle-up"></i>
+			</a>
+			
+			
+			
+			
+			<div id="ticket" class="d-print-block d-none">
+				
+				
+			</div>
+			
+		</body>
+			
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+	
+		
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		
+		
+		<script src="http://nekman.github.io/keynavigator/keynavigator.js"></script>
+		<script src="venta.js"></script>
+		
+		<script >
+			
+			$(".imprimir").click(imprimir);
+			
+			
+			function imprimir(){
+			var $id_venta = $(this).data("id_venta")
+			
+			console.log ("imprimiendo", $id_venta);
+			
+			
+			$.ajax ({
+			url:"ticket.php",
+			data:{
+			id_venta: $id_venta
+			}
+			
+			
+			}).done(termina_ticket)
+			}
+			
+			
+			function termina_ticket(respuesta){
+			
+			$("#ticket").html(respuesta);
+			
+			window.print();
+			}
+			
+			
+			
+			$(".cancelar").click(cancelar);
+			
+			function cancelar(){
+			var $id_venta = $(this).data("id_venta")
+			
+			$.ajax ({
+			url:"cancelar.php",
+			data:{
+			id_venta: $id_venta
+			}
+			
+			
+			}).done(termina_ticket)
+			}
+			
+			
+			$("#registrar_venta").click(guardarVenta);
+			
+			function guardarVenta() {
+			console.log ("guardarVenta");
+			var boton = $(this);
+			
+			boton.prop("disabled", true);
+			
+			$.ajax ({
+			url:"guardar_venta.php",
+			method:"post",
+			data:{
+			id_ventas: $("#id_ventas").val(),
+			nombre_cliente: $("#nombre_cliente").val(),
+			venta_productos: $("#form_venta_productos").serializeArray()
+			}
+			}).done(	
+			function terminaGuardarVenta(respuesta){
+			boton.prop("disabled", false);
+			
+			
+			}
+			);
+			
+			}
+			
+			
+			
+		</script>
+		
+		
+		
+		
+	</html>

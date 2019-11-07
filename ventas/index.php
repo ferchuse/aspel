@@ -8,10 +8,25 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="stylesheet" href="../assets/bootstrap.min.css">
+		<link rel="stylesheet" href="css/menu.css">
 		<title>Nueva Nota</title>
 	</head>
 	
 	<body id="page-top" class="container-fluid">
+		
+		<ul>
+			<li><a href="#">	<img src="../assets/iconos/nuevo.png"></a></li>
+			<li><a href="#"><img src="../assets/iconos/pagar.png"></a></li>
+			<li><a href="#"><img src="../assets/iconos/cancelar.png"></a></li>
+			<li><a href="../catalogos/inventarios.php"><img src="../assets/iconos/catalogos.png"></a></li>
+			<li><a href="#modal_notas" data-toggle="modal" ><img src="../assets/iconos/adminnotas.png"></a></li>
+			<li><a href="#"><img src="../assets/iconos/corte.png"></a></li>
+			<li><a href="#"><img src="../assets/iconos/insertpart.png"></a></li>
+			<li><a href="#"><img src="../assets/iconos/eliminarpart.png"></a></li>
+			<li><a href="#"><img src="../assets/iconos/acumulado.png"></a></li>
+			<li><a href="#"><img src="../assets/iconos/salir.png"></a></li>
+		</ul>
+		
 		<div class="d-print-none">
 			<form id="form_ventas">
 				<div class="row">
@@ -55,8 +70,8 @@
 								<form id="form_venta_productos">
 									<tr>
 										<td class="text-center">1</td>
-										<td><input name="cantidad[]" class="cantidad text-right"></td>
-										<td><input class="articulo "></td>
+										<td><input name="productos[][cantidad]" class="cantidad text-right"></td>
+										<td><input name ="" class="articulo"></td>
 										<td class="">
 											<input class="descripcion" name="descripcion_productos[]" readonly>
 										</td>
@@ -120,4 +135,4 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<script src="venta.js"></script>
 		
-	</html>	
+	</html>		

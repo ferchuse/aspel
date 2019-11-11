@@ -27,82 +27,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/ticket.css">
 		<title>Ticket</title> 
-		
-        <?php include("../../styles.php");?> 
-        
-		<!--  Estilos Ticket -->
-		<style>
-			
-			.ticket {
-			width: 8cm;
-			border: 1px solid #ddd;
-			}
-
-			.line { 
-            line-height: 15px;
-            }
-           
-			.font-11 {
-			font-size: 11px;
-			}
-			
-			.font-11-5 {
-			font-size: 11.5px;
-			}
-			
-			.font-12 {
-			font-size: 12px;
-			}
-			
-			.font-13 {
-			font-size: 13px;
-			}
-			
-			.mar-0 {
-			margin: 0px;
-			}
-
-			.m-top-5 {
-			margin-top: 5px;
-			}
-			
-			.pad-0 {
-			padding: 0px;
-			}
-			
-			.pad-10 {
-			padding: 10px;
-			}
-			
-			.b-top-1 {
-			border-top: 1px solid #ddd;
-			}
-			
-			.b-bot-1 {
-			border-bottom: 1px solid #ddd;
-			}
-			
-			.c-wid-5 {
-			width: 5px;
-			}
-
-			.c-wid-50 {
-			width: 50px;
-			}
-			
-			.c-wid-10 {
-			width: 15px;
-			}
-			
-        </style>
-        
 	</head>
 	
 	<body>
-		 
 		<section class="container ticket">
 			<div class="row mt-5">
 				<h5 class="col-12 text-center font-weight-bold">EL QUIJOTE</h1>

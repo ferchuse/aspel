@@ -6,30 +6,21 @@
 	WHERE id_tienda = 1
 	";
 	$result = mysqli_query($link, $consulta);
-	
 	while($fila = mysqli_fetch_assoc($result)){
 		$fila_venta[] = $fila ;
 	}
 	
-	
-	
 ?>  
 
-
-<!-- Modal Notas -->
 <div class="modal d-print-none" id="modal_notas" style="max-height:500px;">
 	<div class="modal-dialog modal-xl">
 		<div class="modal-content">
-			
-			<!-- Modal Header -->
 			<div class="modal-header">
 				<h4 class="modal-title">Administrador de notas</h4>
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
-			
-			<!-- Modal body -->
+
 			<div class="modal-body" >
-				
 				<ul>
 					<li><a href="#home"><img src="../../img/busqueda_en_el_catalogo.png"></a></li>
 					<li><a href="#news"><img src="../../img/filtrar_el_catalogo.png"></a></li>

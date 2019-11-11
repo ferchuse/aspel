@@ -1,0 +1,8 @@
+body {
+    font-weight: bold;
+}
+
+#wrapper {
+    height: 50vh;
+    overflow-y: scroll;
+  }

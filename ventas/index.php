@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es_mx">
-	
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +8,14 @@
 		<meta name="author" content="">
 		<link rel="stylesheet" href="../assets/bootstrap.min.css">
 		<link rel="stylesheet" href="css/menu.css">
+		<link rel="stylesheet" href="css/main.css">
 		<title>Nueva Nota</title>
 	</head>
 	
-	<body id="page-top" class="container-fluid">
+	<body id="page-top">
 		
 		<ul>
-			<li><a href="#">	<img src="../assets/iconos/nuevo.png"></a></li>
+			<li><a href="#"><img src="../assets/iconos/nuevo.png"></a></li>
 			<li><a href="#"><img src="../assets/iconos/pagar.png"></a></li>
 			<li><a href="#"><img src="../assets/iconos/cancelar.png"></a></li>
 			<li><a href="../catalogos/inventarios.php"><img src="../assets/iconos/catalogos.png"></a></li>
@@ -29,7 +29,8 @@
 		
 		<div class="d-print-none">
 			<form id="form_ventas">
-				<div class="row">
+			<div class="bg-secondary p-1">
+				<div class="row ">
 					<div class="col-4">
 						<div class="form-group row align-items-center">
 							<label class="col-auto font-weight-bold" for="folio">Folio:</label>
@@ -49,6 +50,27 @@
 							value="Mostrador">
 						</div>
 					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<div class="form-group row align-items-center">
+							<label class="col-auto font-weight-bold" for="folio">Descto:</label>
+							<input class="col-8" type="number" class="form-control" id="descto" name="descto" placeholder="0,00%">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="row form-group row align-items-center">
+							<label class="col-auto font-weight-bold" for="vendedor">Vendedor:</label>
+							<input class="col-6" type="text" class="form-control" id="vendedor" name="vendedor">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="row form-group row align-items-center">
+							<label class="col-auto font-weight-bold" for="comision">Comisión:</label>
+							<input class="col-6" type="text" class="form-control" id="comision" name="comision" placeholder="0,00%">
+						</div>
+					</div>
+				</div>
 				</div>
 			</form>
 			
@@ -70,43 +92,35 @@
 								<form id="form_venta_productos">
 									<tr>
 										<td class="text-center">1</td>
-										<td><input name="productos[][cantidad]" class="cantidad text-right"></td>
-										<td><input name ="" class="articulo"></td>
-										<td class="">
-											<input class="descripcion" name="descripcion_productos[]" readonly>
-										</td>
-										<td><input class="precio" name="precio[]" readonly></td>
-										<td><input class="importe" name="importe[]" readonly></td>
+										<td><input name="productos[][cantidad]" class="cantidad text-right form-control"></td>
+										<td><input name ="" class="articulo form-control"></td>
+										<td><input class="descripcion form-control" name="descripcion_productos[]" size="35"></td>
+										<td><input class="precio form-control" name="precio[]" readonly></td>
+										<td><input class="importe form-control" name="importe[]" readonly></td>
 									</tr>
 									<tr>
 										<td class="text-center">2</td>
-										<td><input name="cantidad[]" class="cantidad text-right"></td>
-										<td><input class="articulo "></td>
-										<td class="">
-											<input class="descripcion" name="descripcion_productos[]" readonly>
-										</td>
-										<td><input class="precio" name="precio[]" readonly></td>
-										<td><input class="importe" name="importe[]" readonly></td>
+										<td><input name="cantidad[]" class="cantidad text-right form-control"></td>
+										<td><input class="articulo form-control"></td>
+										<td><input class="descripcion form-control" name="descripcion_productos[]" size="35"></td>
+										<td><input class="precio form-control" name="precio[]" readonly></td>
+										<td><input class="importe form-control" name="importe[]" readonly></td>
 									</tr>
 									<tr>
 										<td class="text-center">2</td>
-										<td><input name="cantidad[]" class="cantidad text-right"></td>
-										<td><input class="articulo "></td>
-										<td class="">
-											<input class="descripcion" name="descripcion_productos[]" readonly>
-										</td>
-										<td><input class="precio" name="precio[]" readonly></td>
-										<td><input class="importe" name="importe[]" readonly></td>
+										<td><input name="cantidad[]" class="cantidad text-right form-control"></td>
+										<td><input class="articulo  form-control"></td>
+										<td><input class="descripcion form-control" name="descripcion_productos[]" size="35"></td>
+										<td><input class="precio form-control" name="precio[]" readonly></td>
+										<td><input class="importe form-control" name="importe[]" readonly></td>
 									</tr>
 									<tr>
 										<td class="text-center">2</td>
-										<td><input name="cantidad[]" class="cantidad text-right"></td>
-										<td><input class="articulo "></td>
-										<td class="">
-											<input class="descripcion" name="descripcion_productos[]" readonly>
-										</td>
-										<td><input class="precio" name="precio[]" readonly></td>
-										<td><input class="importe" name="importe[]" readonly></td>
+										<td><input name="cantidad[]" class="cantidad text-right form-control"></td>
+										<td><input class="articulo form-control"></td>
+										<td><input class="descripcion form-control" name="descripcion_productos[]" size="35"></td>
+										<td><input class="precio form-control" name="precio[]" readonly></td>
+										<td><input class="importe form-control" name="importe[]" readonly></td>
 									</tr>
 								</form>
 							</tbody>
@@ -122,6 +136,11 @@
 						</table>
 					</div>
 				</div>
+			</div>
+			<div class="card p-4 border-dark">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit distinctio enim possimus fugit vitae fuga ipsum delectus laboriosam ad beatae dolore voluptatem, corporis quidem animi earum minima nam maiores cum?</p>
+				<p>TOTAL:</p>
+				<p>TOTAL: </p>
 			</div>
 			<a class="scroll-to-top rounded" href="#page-top">
 				<i class="fas fa-angle-up"></i>

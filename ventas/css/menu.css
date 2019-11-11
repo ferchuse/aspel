@@ -18,7 +18,10 @@ li a {
   padding: 5px 5px;
   text-decoration: none;
 }
-
+li a img {
+  width: 3em;
+  height: 3em;
+}
 li a:hover:not(.active) {
   background-color: #ddd;
 }
@@ -27,3 +30,4 @@ li a.active {
   color: white;
   background-color: #4CAF50;
 }
+

@@ -1,3 +1,4 @@
+<?php include('modal_notas.php');?>
 <!DOCTYPE html>
 <html lang="es_mx">
 	<head>
@@ -78,11 +79,11 @@
 				<div id="content-wrapper">
 					<div class="container-fluid">
 						<table id="tabla_ventas" style="width: 100%" class="table-bordered">
-							<thead>
+							<thead class="text-center">
 								<tr>
 									<th>No.</th>
 									<th>Cantidad</th>
-									<th>Clave</th>
+									<th>Artículo</th>
 									<th>Descripción</th>
 									<th>Precio</th>
 									<th>Total</th>

@@ -1,17 +1,3 @@
-<?php
-	include('../../../conexi.php');
-	$link = Conectarse();
-	$consulta = "SELECT *
-	FROM ventas
-	WHERE id_tienda = 1
-	";
-	$result = mysqli_query($link, $consulta);
-	while($fila = mysqli_fetch_assoc($result)){
-		$fila_venta[] = $fila ;
-	}
-	
-?>  
-
 <div class="modal d-print-none" id="modal_notas" style="max-height:500px;">
 	<div class="modal-dialog modal-xl">
 		<div class="modal-content">
@@ -22,11 +8,11 @@
 
 			<div class="modal-body" >
 				<ul>
-					<li><a href="#home"><img src="../../img/busqueda_en_el_catalogo.png"></a></li>
-					<li><a href="#news"><img src="../../img/filtrar_el_catalogo.png"></a></li>
-					<li><a href="#news"><img src="../../img/cancelar.png"></a></li>
-					<li><a href="#news"><img src="../../img/devolucion.png"></a></li>
-					<li><a href="#news"><img src="../../img/exportar_consulta_a_excel.png"></a></li>
+					<li><a href="#home"><img src="../assets/iconos/busqueda_en_el_catalogo.png"></a></li>
+					<li><a href="#news"><img src="../assets/iconos/filtrar_el_catalogo.png"></a></li>
+					<li><a href="#news"><img src="../assets/iconos/cancelar.png"></a></li>
+					<li><a href="#news"><img src="../assets/iconos/devolucion.png"></a></li>
+					<li><a href="#news"><img src="../assets/iconos/exportar_consulta_a_excel.png"></a></li>
 					<li>
 						<form>
 							<div class="form-group row ml-1 mt-1 mr-1">
@@ -70,29 +56,6 @@
 						<th>Reimprimir</th>
 						
 					</tr>
-					<?php foreach($fila_venta AS $venta){?>
-					
-                    <tr class="">
-						<td><?php echo $venta["id_venta"]?></td>
-						<td><?php echo $venta["estatus_venta"];?></td>
-						<td><?php echo date("d/m/Y", strtotime($venta["fecha_venta"]));?></td>
-						<td><?php echo $venta["nombre_cliente"];?></td>
-						<td><?php echo $venta["importe_venta"];?></td>
-						<td><?php echo $venta["id_cajero"];?></td>
-						<td>
-						<button class="btn btn-primary imprimir" data-id_venta="<?php echo $venta["id_venta"]?>">
-							<i class="fas fa-print"></i>
-						</button>
-						<button class="btn btn-danger cancelar" data-id_venta="<?php echo $venta["id_venta"]?>">
-							Cancelar
-						</button></td>
-						</td>
-					</tr>
-					
-                    <?php 
-						}
-						
-					?>
 				</thead>
 				<tbody>
 					

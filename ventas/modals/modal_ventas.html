@@ -1,6 +1,6 @@
 <form id="form_pago">
-  <div class="modal " id="modal_pago" style="max-height:500px;">
-    <div class="modal-dialog modal-md">
+  <div class="modal " id="modal_ventas" style="max-height:500px;">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Pagos</h4>
@@ -13,6 +13,52 @@
               <th><input id="importe" value="0"></th>
             </tr>
           </table>
+          <div class="row p-3">
+            <div class="col-md-6">
+              <form action="" class="form-group">
+                <div class="row">
+                  <span>Notas procesadas: </span>
+                  <input type="text" class="form-control col-md-6 text-right" placeholder="0">
+                </div>
+                <div class="row">
+                  <span>Notas cobradas: </span>
+                  <input type="text" class="form-control col-md-6 text-right" placeholder="0">
+                </div>
+                <div class="row">
+                  <span>Notas pendientes: </span>
+                  <input type="text" class="form-control col-md-6 text-right" placeholder="0">
+                </div>
+                <div class="row">
+                  <span>Folios impresos: </span>
+                  <input type="text" class="form-control col-md-6 text-right" placeholder="0">
+                </div>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <form action="" class="form-group">
+                <div class="row">
+                  <span>Provision inicial: </span>
+                  <input type="text" class="form-control col-md-6 text-right" placeholder="0">
+                </div>
+                <div class="row">
+                  <span>Total de ventas: </span>
+                  <input type="text" class="form-control col-md-6 text-right" placeholder="0">
+                </div>
+                <div class="row">
+                  <span>Entradas de dinero: </span>
+                  <input type="text" class="form-control col-md-6 text-right" placeholder="0">
+                </div>
+                <div class="row">
+                  <span>Salidas de dinero: </span>
+                  <input type="text" class="form-control col-md-6 text-right" placeholder="0">
+                </div>
+                <div class="row">
+                  <span>En caja: </span>
+                  <input type="text" class="form-control col-md-6 text-right" placeholder="0">
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" data-dismiss="modal" class="btn btn-danger"><i class="fa fa-times"></i>
@@ -24,34 +70,3 @@
     </div>
   </div>
 </form>
-
-<div class="modal " id="modal_efectivo" style="max-height:500px;">
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h4 class="modal-title">Efectivo</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <div class="modal-body">
-        <table id="" class="table">
-          <tr>
-            <th>Importe:</th>
-            <th>
-              <input id="importe" value="0">
-            </th>
-          </tr>
-        </table>
-
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i>
-          Cancelar</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fas fa-check"></i>
-          Aceptar</button>
-      </div>
-    </div>
-  </div>
-</div>

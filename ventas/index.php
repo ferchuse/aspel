@@ -109,8 +109,6 @@
           <div class="col-md-6 p-4">
             <ul>
               <li>SUB TOTAL $: </li>
-              <li>DESCUENTO $: </li>
-              <li>IMPUESTOS $: </li>
               <br>
               <hr>
               <li>TOTAL $: </li>

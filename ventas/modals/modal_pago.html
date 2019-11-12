@@ -1,0 +1,56 @@
+<form id="form_pago">
+  <div class="modal " id="modal_pago" style="max-height:500px;">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4 class="modal-title">Pagos</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <table id= "tabla_productos" class="table">
+            <tr>
+              <th>Total:</th>
+              <th><input id="importe" value="0"></th>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  data-dismiss="modal" class="btn btn-danger"><i class="fa fa-times"></i> Cancelar</button>
+          <button type="submit" id="registrar_venta" class="btn btn-success"><i class="fas fa-check"></i> Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="modal " id="modal_efectivo" style="max-height:500px;">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Efectivo</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body" >
+        <table id= "" class="table">
+          <tr>
+            <th>Importe:</th>
+            <th>
+              <input id="importe" value="0">
+            </th>
+          </tr>
+        </table>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fas fa-check"></i> Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

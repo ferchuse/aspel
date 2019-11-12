@@ -3,6 +3,7 @@ body {
 }
 
 #wrapper {
-    height: 50vh;
+    height: 35vh;
     overflow-y: scroll;
+    
   }
